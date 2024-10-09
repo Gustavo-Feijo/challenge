@@ -1,0 +1,14 @@
+FROM node:22
+
+WORKDIR /usr/src/app
+
+# Copia e instala as dependencias.
+COPY package*.json ./
+
+RUN npm install
+
+# Copi todos arquivos.
+COPY . .
+
+# Executa a aplicação.
+CMD [ "npm", "test" ]
